@@ -58,6 +58,12 @@ export default function CreatorPage() {
             </span>
             <div>
               <h2 className="font-display text-2xl font-semibold">Aranya Vij</h2>
+              <a
+                href="https://aranyavij.com"
+                className="mt-1 inline-block text-sm font-semibold text-primary hover:underline"
+              >
+                aranyavij.com
+              </a>
 
               <div className="mt-1 inline-flex items-center gap-2 rounded-full border border-border bg-muted/40 px-3 py-1 text-sm text-muted-foreground">
                 <MapPin className="size-4 text-primary" />
