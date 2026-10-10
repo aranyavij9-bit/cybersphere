@@ -25,7 +25,7 @@ import { PageHeader } from "@/components/page-header"
 import { Panel, PanelHeader } from "@/components/ui-kit"
 import { ATTACK_TYPES } from "@/lib/data"
 
-const CHART_COLORS = ["var(--chart-1)", "var(--chart-2)", "var(--chart-3)", "var(--chart-4)", "var(--chart-5)"]
+const SEV_COLORS = ["var(--destructive)", "var(--warning)", "var(--butter)", "var(--primary)"]
 
 function seeded(n: number, salt = 1) {
   return Math.abs(Math.sin(n * 12.9898 * salt) * 43758.5453) % 1
@@ -72,7 +72,7 @@ export default function AnalyticsPage() {
   const tooltipStyle = {
     background: "var(--popover)",
     border: "1px solid var(--border)",
-    borderRadius: 8,
+    borderRadius: 14,
     color: "var(--popover-foreground)",
     fontSize: 12,
   }
@@ -121,7 +121,7 @@ export default function AnalyticsPage() {
                 <XAxis dataKey="type" stroke="var(--muted-foreground)" fontSize={9} tickLine={false} interval={0} angle={-25} textAnchor="end" height={50} />
                 <YAxis stroke="var(--muted-foreground)" fontSize={11} tickLine={false} axisLine={false} />
                 <Tooltip contentStyle={tooltipStyle} cursor={{ fill: "var(--muted)" }} />
-                <Bar dataKey="count" fill="var(--chart-1)" radius={[4, 4, 0, 0]} />
+                <Bar dataKey="count" fill="var(--chart-1)" radius={[8, 8, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </div>
@@ -134,7 +134,7 @@ export default function AnalyticsPage() {
               <PieChart>
                 <Pie data={distribution} dataKey="value" nameKey="name" innerRadius={50} outerRadius={80} paddingAngle={3}>
                   {distribution.map((_, i) => (
-                    <Cell key={i} fill={CHART_COLORS[i % CHART_COLORS.length]} />
+                    <Cell key={i} fill={SEV_COLORS[i % SEV_COLORS.length]} />
                   ))}
                 </Pie>
                 <Tooltip contentStyle={tooltipStyle} />
@@ -144,7 +144,7 @@ export default function AnalyticsPage() {
           <div className="flex flex-wrap justify-center gap-3 pb-4 text-xs">
             {distribution.map((d, i) => (
               <span key={d.name} className="flex items-center gap-1.5 text-muted-foreground">
-                <span className="size-2.5 rounded-full" style={{ background: CHART_COLORS[i % CHART_COLORS.length] }} />
+                <span className="size-2.5 rounded-full" style={{ background: SEV_COLORS[i % SEV_COLORS.length] }} />
                 {d.name}
               </span>
             ))}

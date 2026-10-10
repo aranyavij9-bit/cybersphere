@@ -48,7 +48,7 @@ export default function NewsPage() {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search headlines..."
-                className="w-full rounded-lg border border-border bg-card py-2 pl-9 pr-3 text-sm outline-none focus:border-primary"
+                className="w-full rounded-xl border border-border bg-card py-2 pl-9 pr-3 text-sm outline-none focus:border-primary"
               />
             </div>
           </div>
@@ -95,7 +95,7 @@ export default function NewsPage() {
                       onClick={() => toggleBookmark(n.id)}
                       aria-label={saved ? "Remove bookmark" : "Bookmark article"}
                       className={cn(
-                        "shrink-0 rounded-md p-2 transition-colors",
+                        "shrink-0 rounded-full p-2 transition-colors",
                         saved ? "text-primary" : "text-muted-foreground hover:text-foreground",
                       )}
                     >

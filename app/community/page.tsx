@@ -126,7 +126,7 @@ export default function CommunityPage() {
               <s.icon className="size-4 text-primary" />
               <span className="text-xs">{s.label}</span>
             </div>
-            <p className="mt-2 text-2xl font-bold">{s.value}</p>
+            <p className="mt-2 font-display text-2xl font-semibold">{s.value}</p>
           </Panel>
         ))}
       </div>
@@ -191,7 +191,7 @@ export default function CommunityPage() {
             </h3>
             <ul className="space-y-3">
               {EVENTS.map((e) => (
-                <li key={e.title} className="rounded-lg border border-border/60 p-3">
+                <li key={e.title} className="rounded-2xl border border-border/60 p-3">
                   <p className="text-sm font-medium leading-snug">{e.title}</p>
                   <p className="mt-1 text-xs text-primary">{e.when}</p>
                   <p className="text-xs text-muted-foreground">by {e.host}</p>

@@ -129,9 +129,9 @@ export function PhishingSim() {
               exit={{ opacity: 0, y: -10 }}
             >
               {/* Email mock */}
-              <div className="rounded-lg border border-border bg-background">
+              <div className="rounded-2xl border border-border bg-background">
                 <div className="flex items-center gap-3 border-b border-border px-4 py-3">
-                  <span className="grid size-9 place-items-center rounded-full bg-muted text-muted-foreground">
+                  <span className="grid size-9 place-items-center rounded-full bg-secondary text-primary">
                     <Mail className="size-4" />
                   </span>
                   <div className="min-w-0">
@@ -156,7 +156,7 @@ export function PhishingSim() {
               ) : (
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mt-4 space-y-3">
                   <div
-                    className={`flex items-center gap-2 rounded-lg border px-3 py-2 text-sm font-medium ${
+                    className={`flex items-center gap-2 rounded-2xl border px-3 py-2 text-sm font-medium ${
                       answered.correct
                         ? "border-success/40 bg-success/10 text-success"
                         : "border-destructive/40 bg-destructive/10 text-destructive"
@@ -166,7 +166,7 @@ export function PhishingSim() {
                     {answered.correct ? "Correct!" : "Not quite."} This email is{" "}
                     {email.suspicious ? "a phishing attempt." : "legitimate."}
                   </div>
-                  <div className="rounded-lg border border-border bg-muted/30 p-3">
+                  <div className="rounded-2xl border border-border bg-muted/30 p-3">
                     <p className="mb-2 text-xs font-medium">Key signals:</p>
                     <ul className="space-y-1">
                       {email.flags.map((f) => (

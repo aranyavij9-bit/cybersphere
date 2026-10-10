@@ -47,7 +47,7 @@ function StatCard({
         <span className={ring[tone]}>{icon}</span>
         <ArrowUpRight className="size-4 text-muted-foreground" />
       </div>
-      <p className="mt-3 text-2xl font-bold tabular-nums">{value}</p>
+      <p className="mt-3 font-display text-3xl font-semibold tabular-nums text-heading">{value}</p>
       <p className="text-sm font-medium">{label}</p>
       <p className="text-xs text-muted-foreground">{sub}</p>
     </Panel>
@@ -66,16 +66,15 @@ export function Dashboard() {
   return (
     <div className="space-y-6">
       {/* Hero */}
-      <div className="relative overflow-hidden rounded-2xl border border-border bg-card p-6 scanline">
-        <div className="grid-bg absolute inset-0 opacity-40" aria-hidden />
+      <div className="relative overflow-hidden rounded-3xl border border-border bg-card p-6 shadow-card">
         <div className="relative z-10 flex flex-wrap items-end justify-between gap-4">
           <div>
             <Badge tone="cyan">
-              <Radio className="size-3 animate-pulse" />
+              <Radio className="size-3" />
               Live SOC Feed
             </Badge>
-            <h1 className="mt-3 text-balance text-2xl font-bold tracking-tight sm:text-3xl">
-              Welcome back, <span className="text-primary text-glow">{name}</span>
+            <h1 className="mt-3 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
+              Welcome back, <span className="text-primary">{name}</span>
             </h1>
             <p className="mt-1 text-sm text-muted-foreground">
               Awareness level: <span className="text-foreground">{levelFromScore(awarenessScore)}</span> · {" "}
@@ -85,14 +84,14 @@ export function Dashboard() {
           <div className="flex gap-2">
             <Link
               href="/simulations"
-              className="inline-flex items-center gap-1.5 rounded-lg bg-primary px-3 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
+              className="inline-flex items-center gap-1.5 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground hover:bg-primary-hover"
             >
               <Swords className="size-4" />
               Run Simulation
             </Link>
             <Link
               href="/quiz"
-              className="inline-flex items-center gap-1.5 rounded-lg border border-border px-3 py-2 text-sm font-medium hover:bg-muted"
+              className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-4 py-2 text-sm font-semibold hover:bg-secondary"
             >
               <Brain className="size-4" />
               Take Quiz
@@ -178,9 +177,6 @@ export function Dashboard() {
         <Panel className="lg:col-span-2" glow>
           <PanelHeader title="Daily Cyber Tip" icon={<Lightbulb className="size-4" />} />
           <div className="flex items-start gap-3 p-4">
-            <span className="grid size-10 shrink-0 place-items-center rounded-lg bg-warning/15 text-warning">
-              <Lightbulb className="size-5" />
-            </span>
             <p className="text-pretty text-sm leading-relaxed">{DAILY_TIPS[tipIndex]}</p>
           </div>
         </Panel>
@@ -196,7 +192,7 @@ export function Dashboard() {
               <Link
                 key={l.href}
                 href={l.href}
-                className="flex items-center justify-between rounded-lg border border-border px-3 py-2.5 text-sm hover:bg-muted"
+                className="flex items-center justify-between rounded-2xl border border-border px-3 py-2.5 text-sm transition-all hover:-translate-y-0.5 hover:bg-secondary"
               >
                 <span>
                   <span className="font-medium">{l.label}</span>

@@ -61,7 +61,7 @@ export default function ToolkitPage() {
                       onClick={() => toggleChecklist(t.id)}
                       disabled={!ready}
                       className={cn(
-                        "flex w-full items-start gap-3 rounded-lg border p-3 text-left transition-colors",
+                        "flex w-full items-start gap-3 rounded-2xl border p-3 text-left transition-colors",
                         done ? "border-success/40 bg-success/5" : "border-border hover:border-primary/40",
                       )}
                     >

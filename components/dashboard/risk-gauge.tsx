@@ -35,7 +35,7 @@ export function RiskGauge({ score }: { score: number }) {
           transition={{ duration: 1.2, ease: "easeOut" }}
           style={{ filter: `drop-shadow(0 0 6px ${tone})` }}
         />
-        <text x="90" y="78" textAnchor="middle" className="fill-foreground text-3xl font-bold">
+        <text x="90" y="78" textAnchor="middle" className="fill-foreground font-display text-3xl font-semibold">
           {pct}
         </text>
       </svg>

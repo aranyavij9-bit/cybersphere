@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils"
 const SEV_TONE: Record<Scam["severity"], string> = {
   Critical: "red",
   High: "amber",
-  Medium: "cyan",
+  Medium: "butter",
 }
 
 function ScamCard({ scam }: { scam: Scam }) {
@@ -23,7 +23,7 @@ function ScamCard({ scam }: { scam: Scam }) {
         aria-expanded={open}
       >
         <div className="flex items-center gap-3">
-          <span className="grid size-9 shrink-0 place-items-center rounded-lg border border-destructive/30 bg-destructive/10 text-destructive">
+          <span className="grid size-9 shrink-0 place-items-center rounded-2xl border border-destructive/30 bg-destructive/10 text-destructive">
             <ShieldAlert className="size-4" />
           </span>
           <div>
@@ -42,7 +42,7 @@ function ScamCard({ scam }: { scam: Scam }) {
             <p className="mb-1 font-medium text-foreground">How it works</p>
             <p className="leading-relaxed text-muted-foreground">{scam.how}</p>
           </div>
-          <div className="rounded-lg border border-border bg-muted/40 p-3">
+          <div className="rounded-2xl border border-border bg-muted/40 p-3">
             <p className="mb-1 text-xs font-medium uppercase tracking-wide text-muted-foreground">Real-world example</p>
             <p className="leading-relaxed text-foreground/90">{scam.example}</p>
           </div>

@@ -40,7 +40,7 @@ export default function TimelinePage() {
                       <Zap className="mt-0.5 size-4 shrink-0 text-destructive" />
                       {e.impact}
                     </p>
-                    <p className="flex gap-2 rounded-lg border border-success/30 bg-success/5 p-3 leading-relaxed text-foreground/90">
+                    <p className="flex gap-2 rounded-2xl border border-success/30 bg-success/5 p-3 leading-relaxed text-foreground/90">
                       <BookOpen className="mt-0.5 size-4 shrink-0 text-success" />
                       <span>
                         <span className="font-medium text-success">Lesson: </span>

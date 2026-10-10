@@ -72,7 +72,7 @@ function Cracker({ target, label, weak }: { target: string; label: string; weak:
   }
 
   return (
-    <div className="rounded-lg border border-border p-4">
+    <div className="rounded-2xl border border-border p-4">
       <div className="mb-3 flex items-center justify-between">
         <span className="text-sm font-medium">{label}</span>
         <Badge tone={weak ? "red" : "green"}>{weak ? "Weak" : "Strong"}</Badge>
@@ -130,7 +130,7 @@ export function BruteForceSim() {
         <Cracker target="cat123" label="Common password" weak />
         <Cracker target="9xK!mP2$vQ7" label="Random strong password" weak={false} />
       </div>
-      <div className="mx-4 mb-4 rounded-lg border border-border bg-muted/30 p-3 text-xs leading-relaxed text-muted-foreground">
+      <div className="mx-4 mb-4 rounded-2xl border border-border bg-muted/30 p-3 text-xs leading-relaxed text-muted-foreground">
         <p className="mb-1 font-medium text-foreground">The takeaway</p>
         A short, common password is guessed almost instantly because attackers try dictionaries and
         common patterns first. Each extra character and character type multiplies the search space,

@@ -54,7 +54,7 @@ function QuizRunner({ quiz, onExit }: { quiz: Quiz; onExit: () => void }) {
         <span className="mx-auto mb-4 grid size-16 place-items-center rounded-full border border-primary/30 bg-primary/10 text-primary">
           <Trophy className="size-8" />
         </span>
-        <h2 className="text-xl font-bold">Quiz complete!</h2>
+        <h2 className="font-display text-xl font-semibold">Quiz complete!</h2>
         <p className="mt-1 text-muted-foreground">
           You scored {score} / {quiz.questions.length} ({pct}%)
         </p>
@@ -62,7 +62,7 @@ function QuizRunner({ quiz, onExit }: { quiz: Quiz; onExit: () => void }) {
         <div className="mt-6 flex justify-center gap-3">
           <button
             onClick={onExit}
-            className="rounded-lg border border-border px-4 py-2 text-sm font-medium hover:border-primary/40"
+            className="rounded-full border border-border px-4 py-2 text-sm font-medium hover:border-primary/40"
           >
             Back to quizzes
           </button>
@@ -98,7 +98,7 @@ function QuizRunner({ quiz, onExit }: { quiz: Quiz; onExit: () => void }) {
               onClick={() => choose(i)}
               disabled={locked}
               className={cn(
-                "flex w-full items-center justify-between gap-3 rounded-lg border px-4 py-3 text-left text-sm transition-colors",
+                "flex w-full items-center justify-between gap-3 rounded-2xl border px-4 py-3 text-left text-sm transition-colors",
                 !locked && "hover:border-primary/40",
                 locked && isAnswer && "border-success/50 bg-success/10 text-success",
                 locked && isPicked && !isAnswer && "border-destructive/50 bg-destructive/10 text-destructive",
@@ -115,7 +115,7 @@ function QuizRunner({ quiz, onExit }: { quiz: Quiz; onExit: () => void }) {
       </div>
 
       {locked && (
-        <div className="mt-4 rounded-lg border border-border bg-muted/40 p-3 text-sm leading-relaxed text-muted-foreground">
+        <div className="mt-4 rounded-2xl border border-border bg-muted/40 p-3 text-sm leading-relaxed text-muted-foreground">
           {question.explain}
         </div>
       )}
@@ -124,7 +124,7 @@ function QuizRunner({ quiz, onExit }: { quiz: Quiz; onExit: () => void }) {
         <button
           onClick={next}
           disabled={!locked}
-          className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 disabled:opacity-40"
+          className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary-hover disabled:opacity-40"
         >
           {isLast ? "Finish" : "Next"} <ArrowRight className="size-4" />
         </button>
@@ -177,7 +177,7 @@ export default function QuizPage() {
               <p className="mt-1 text-sm text-muted-foreground">{q.questions.length} questions</p>
               <button
                 onClick={() => setActive(q)}
-                className="mt-4 inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+                className="mt-4 inline-flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary-hover"
               >
                 {best !== null ? (
                   <>

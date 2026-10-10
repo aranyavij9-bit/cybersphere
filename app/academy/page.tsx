@@ -42,7 +42,7 @@ export default function AcademyPage() {
           return (
             <Panel key={m.id} className="flex flex-col p-4">
               <div className="mb-2 flex items-center justify-between">
-                <span className="grid size-9 place-items-center rounded-lg border border-primary/30 bg-primary/10 text-primary">
+                <span className="grid size-9 place-items-center rounded-2xl border border-primary/30 bg-primary/10 text-primary">
                   <BookOpen className="size-4" />
                 </span>
                 <Badge tone={LEVEL_TONE[m.level] as never}>{m.level}</Badge>
@@ -61,10 +61,10 @@ export default function AcademyPage() {
                 onClick={() => completeModule(m.id)}
                 disabled={!ready || isDone}
                 className={cn(
-                  "mt-auto inline-flex items-center justify-center gap-2 rounded-lg border px-3 py-2 text-sm font-medium transition-colors",
+                  "mt-auto inline-flex items-center justify-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition-colors",
                   isDone
                     ? "border-success/40 bg-success/10 text-success"
-                    : "border-primary bg-primary text-primary-foreground hover:bg-primary/90",
+                    : "border-primary bg-primary text-primary-foreground hover:bg-primary-hover",
                 )}
               >
                 {isDone ? (

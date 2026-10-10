@@ -15,7 +15,7 @@ export function Sidebar({ open, onClose }: { open: boolean; onClose: () => void 
     <>
       {open && (
         <div
-          className="fixed inset-0 z-40 bg-background/70 backdrop-blur-sm lg:hidden"
+          className="fixed inset-0 z-40 bg-background/70 lg:hidden"
           onClick={onClose}
           aria-hidden
         />
@@ -28,17 +28,15 @@ export function Sidebar({ open, onClose }: { open: boolean; onClose: () => void 
       >
         <div className="flex items-center justify-between gap-2 border-b border-sidebar-border px-4 py-4">
           <Link href="/" className="flex items-center gap-2.5" onClick={onClose}>
-            <span className="grid size-9 place-items-center rounded-lg border border-primary/30 bg-primary/10 glow-cyan">
-              <Shield className="size-5 text-primary" />
-            </span>
+            <Shield className="size-6 text-primary" />
             <span className="flex flex-col leading-none">
-              <span className="text-sm font-bold tracking-tight">CyberSphere</span>
-              <span className="text-[10px] uppercase tracking-[0.18em] text-primary">SOC Console</span>
+              <span className="font-display text-lg font-semibold tracking-tight text-heading">CyberSphere</span>
+              <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-accent">SOC Console</span>
             </span>
           </Link>
           <button
             onClick={onClose}
-            className="grid size-8 place-items-center rounded-md text-muted-foreground hover:bg-sidebar-accent lg:hidden"
+            className="grid size-8 place-items-center rounded-full text-muted-foreground hover:bg-sidebar-accent lg:hidden"
             aria-label="Close menu"
           >
             <X className="size-4" />
@@ -61,9 +59,9 @@ export function Sidebar({ open, onClose }: { open: boolean; onClose: () => void 
                         href={item.href}
                         onClick={onClose}
                         className={cn(
-                          "flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm transition-colors",
+                          "flex items-center gap-2.5 rounded-full px-3.5 py-2 text-sm transition-colors",
                           active
-                            ? "bg-sidebar-accent font-medium text-primary"
+                            ? "bg-sidebar-accent font-semibold text-primary"
                             : "text-sidebar-foreground/80 hover:bg-sidebar-accent/60 hover:text-sidebar-foreground",
                         )}
                       >

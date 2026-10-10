@@ -72,7 +72,7 @@ function analyze(text: string): Finding[] {
 const SEV_TONE: Record<Finding["severity"], string> = {
   Critical: "red",
   High: "amber",
-  Medium: "cyan",
+  Medium: "butter",
   Info: "muted",
 }
 
@@ -112,11 +112,11 @@ export default function LogAnalyzerPage() {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             spellCheck={false}
-            className="h-72 w-full resize-none rounded-lg border border-border bg-background p-3 font-mono text-xs leading-relaxed outline-none focus:border-primary"
+            className="h-72 w-full resize-none rounded-xl border border-border bg-background p-3 font-mono text-xs leading-relaxed outline-none focus:border-primary"
           />
           <button
             onClick={() => setFindings(analyze(input))}
-            className="mt-3 inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="mt-3 inline-flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary-hover"
           >
             <Play className="size-4" /> Analyze logs
           </button>
@@ -140,8 +140,8 @@ export default function LogAnalyzerPage() {
               {summary && (
                 <div className="mb-3 grid grid-cols-3 gap-2 text-center">
                   {(["Critical", "High", "Medium"] as const).map((s) => (
-                    <div key={s} className="rounded-lg border border-border p-2">
-                      <p className="text-lg font-bold">{summary[s]}</p>
+                    <div key={s} className="rounded-2xl border border-border p-2">
+                      <p className="font-display text-lg font-semibold">{summary[s]}</p>
                       <Badge tone={SEV_TONE[s] as never}>{s}</Badge>
                     </div>
                   ))}
@@ -149,7 +149,7 @@ export default function LogAnalyzerPage() {
               )}
               <div className="flex-1 space-y-2 overflow-y-auto">
                 {findings.length === 0 && (
-                  <div className="flex items-center gap-2 rounded-lg border border-success/30 bg-success/5 p-3 text-sm text-success">
+                  <div className="flex items-center gap-2 rounded-2xl border border-success/30 bg-success/5 p-3 text-sm text-success">
                     <Info className="size-4" /> No suspicious activity detected.
                   </div>
                 )}
@@ -157,7 +157,7 @@ export default function LogAnalyzerPage() {
                   <div
                     key={i}
                     className={cn(
-                      "rounded-lg border p-3 text-sm",
+                      "rounded-2xl border p-3 text-sm",
                       f.severity === "Critical" ? "border-destructive/40 bg-destructive/5" : "border-border",
                     )}
                   >

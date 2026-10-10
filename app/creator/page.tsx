@@ -53,11 +53,11 @@ export default function CreatorPage() {
       <Panel className="overflow-hidden">
         <div className="border-b border-border bg-primary/5 p-6 sm:p-8">
           <div className="flex flex-col items-center gap-4 text-center sm:flex-row sm:text-left">
-            <span className="grid size-20 shrink-0 place-items-center rounded-2xl border border-primary/30 bg-primary/10 text-primary">
+            <span className="grid size-20 shrink-0 place-items-center rounded-3xl border border-primary/30 bg-primary/10 text-primary">
               <Code2 className="size-9" />
             </span>
             <div>
-              <h2 className="text-2xl font-bold">Aranya Vij</h2>
+              <h2 className="font-display text-2xl font-semibold">Aranya Vij</h2>
 
               <div className="mt-1 inline-flex items-center gap-2 rounded-full border border-border bg-muted/40 px-3 py-1 text-sm text-muted-foreground">
                 <MapPin className="size-4 text-primary" />
@@ -123,7 +123,7 @@ export default function CreatorPage() {
             ].map((c) => (
               <div
                 key={c.label}
-                className="flex items-center gap-3 rounded-lg border border-border p-3 text-sm"
+                className="flex items-center gap-3 rounded-2xl border border-border p-3 text-sm"
               >
                 <c.icon className="size-4 text-primary" />
                 <span className="font-medium">{c.label}</span>

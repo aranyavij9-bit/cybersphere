@@ -30,14 +30,14 @@ export function Topbar({ onMenu }: { onMenu: () => void }) {
     <header className="sticky top-0 z-30 flex h-16 items-center gap-3 border-b border-border bg-background/80 px-4 backdrop-blur-md">
       <button
         onClick={onMenu}
-        className="grid size-9 place-items-center rounded-lg border border-border text-muted-foreground hover:bg-muted lg:hidden"
+        className="grid size-9 place-items-center rounded-full border border-border text-muted-foreground hover:bg-muted lg:hidden"
         aria-label="Open menu"
       >
         <Menu className="size-5" />
       </button>
 
       <div className="min-w-0">
-        <p className="truncate text-sm font-semibold tracking-tight">
+        <p className="truncate font-display text-base font-semibold tracking-tight text-heading">
           {greeting()}, <span className="text-primary">{name ?? "Operator"}</span>
         </p>
         <p className="hidden text-xs text-muted-foreground sm:block">
@@ -60,7 +60,7 @@ export function Topbar({ onMenu }: { onMenu: () => void }) {
             {awarenessScore}%
           </Badge>
         </div>
-        <div className="rounded-lg border border-border bg-card px-3 py-1.5 font-mono text-xs tabular-nums text-primary">
+        <div className="rounded-full border border-border bg-card px-3 py-1.5 font-mono text-xs tabular-nums text-primary">
           {clock}
         </div>
       </div>

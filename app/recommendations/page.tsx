@@ -35,7 +35,7 @@ export default function RecommendationsPage() {
         </span>
         <div>
           <p className="text-sm text-muted-foreground">Current risk score</p>
-          <p className="text-2xl font-bold">
+          <p className="font-display text-2xl font-semibold">
             {riskScore}
             <span className="text-base font-normal text-muted-foreground"> / 100</span>
           </p>

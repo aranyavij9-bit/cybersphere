@@ -74,7 +74,7 @@ export function DDoSSim() {
       />
       <div className="grid gap-4 p-4 lg:grid-cols-[1.4fr_1fr]">
         {/* Visualization */}
-        <div className="relative h-72 overflow-hidden rounded-lg border border-border bg-background grid-bg">
+        <div className="relative h-72 overflow-hidden rounded-2xl border border-border bg-background">
           {packets.map((p) => (
             <span
               key={p.id}
@@ -90,7 +90,7 @@ export function DDoSSim() {
           {/* server */}
           <div className="absolute inset-x-0 bottom-0 flex flex-col items-center pb-3">
             <div
-              className="grid h-12 w-40 place-items-center rounded-lg border text-xs font-medium transition-colors"
+              className="grid h-12 w-40 place-items-center rounded-2xl border text-xs font-medium transition-colors"
               style={{
                 borderColor: load > 90 ? "var(--destructive)" : "var(--primary)",
                 color: load > 90 ? "var(--destructive)" : "var(--primary)",
@@ -104,7 +104,7 @@ export function DDoSSim() {
 
         {/* Controls + metrics */}
         <div className="flex flex-col gap-4">
-          <div className="space-y-3 rounded-lg border border-border p-3">
+          <div className="space-y-3 rounded-2xl border border-border p-3">
             <div>
               <div className="mb-1 flex justify-between text-xs">
                 <span className="text-muted-foreground">Server load</span>
@@ -138,7 +138,7 @@ export function DDoSSim() {
             </Button>
           </div>
 
-          <div className="rounded-lg border border-border bg-muted/30 p-3 text-xs leading-relaxed text-muted-foreground">
+          <div className="rounded-2xl border border-border bg-muted/30 p-3 text-xs leading-relaxed text-muted-foreground">
             <p className="mb-1 font-medium text-foreground">What is happening?</p>
             A botnet floods the server with junk traffic (red packets) so legitimate users (cyan)
             can&apos;t get through. Enabling <span className="text-success">mitigation</span> applies

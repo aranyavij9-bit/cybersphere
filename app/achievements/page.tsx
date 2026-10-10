@@ -40,12 +40,12 @@ export default function AchievementsPage() {
 
       <Panel className="flex flex-col gap-4 p-5 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex items-center gap-4">
-          <span className="grid size-14 place-items-center rounded-2xl border border-primary/30 bg-primary/10 text-primary">
+          <span className="grid size-14 place-items-center rounded-3xl border border-primary/30 bg-primary/10 text-primary">
             <Award className="size-7" />
           </span>
           <div>
             <p className="text-sm text-muted-foreground">Current rank</p>
-            <p className="text-xl font-bold">{level}</p>
+            <p className="font-display text-xl font-semibold">{level}</p>
           </div>
         </div>
         <div className="sm:w-64">
@@ -61,7 +61,7 @@ export default function AchievementsPage() {
         {stats.map((s) => (
           <Panel key={s.label} className="p-4">
             <s.icon className={cn("mb-2 size-5", s.tone)} />
-            <p className="text-2xl font-bold">{s.value}</p>
+            <p className="font-display text-2xl font-semibold">{s.value}</p>
             <p className="text-sm text-muted-foreground">{s.label}</p>
           </Panel>
         ))}

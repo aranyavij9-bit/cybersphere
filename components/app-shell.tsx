@@ -15,7 +15,7 @@ export function AppShell({ children }: { children: ReactNode }) {
     return (
       <div className="grid min-h-dvh place-items-center bg-background">
         <div className="flex flex-col items-center gap-3 text-muted-foreground">
-          <Shield className="size-8 animate-pulse text-primary" />
+          <Shield className="size-8 text-primary" />
           <p className="text-sm">Initializing secure session…</p>
         </div>
       </div>

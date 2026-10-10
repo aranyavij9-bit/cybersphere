@@ -28,7 +28,7 @@ const SEVERITIES: Arc["severity"][] = ["Critical", "High", "Medium", "Low"]
 const sevColor: Record<Arc["severity"], string> = {
   Critical: "var(--destructive)",
   High: "var(--warning)",
-  Medium: "var(--accent)",
+  Medium: "var(--butter)",
   Low: "var(--primary)",
 }
 
@@ -97,7 +97,7 @@ export function ThreatMap() {
         description="Simulated real-time attack routes between countries. Continuously generated so the SOC view always stays active."
         action={
           <Badge tone="cyan">
-            <Radio className="size-3 animate-pulse" />
+            <Radio className="size-3" />
             Live
           </Badge>
         }
@@ -111,7 +111,7 @@ export function ThreatMap() {
             icon={<Activity className="size-4" />}
           />
           <div className="relative bg-background">
-            <div className="grid-bg pointer-events-none absolute inset-0 opacity-30" />
+            <div className="pointer-events-none absolute inset-0 opacity-30" />
             <ComposableMap
               projectionConfig={{ scale: 145 }}
               width={800}
@@ -124,13 +124,13 @@ export function ThreatMap() {
                     <Geography
                       key={geo.rsmKey}
                       geography={geo}
-                      fill="oklch(0.24 0.025 255)"
-                      stroke="oklch(0.32 0.03 255)"
+                      fill="#ECE8EF"
+                      stroke="#FFFFFF"
                       strokeWidth={0.4}
                       style={
                         {
                           default: { outline: "none" },
-                          hover: { fill: "oklch(0.28 0.03 255)", outline: "none" },
+                          hover: { fill: "#DCE7FB", outline: "none" },
                           pressed: { outline: "none" },
                         } as never
                       }
@@ -147,7 +147,7 @@ export function ThreatMap() {
                   stroke={sevColor[a.severity]}
                   strokeWidth={1.2}
                   strokeLinecap="round"
-                  style={{ opacity: 0.7, filter: `drop-shadow(0 0 2px ${sevColor[a.severity]})` }}
+                  style={{ opacity: 0.75 }}
                 />
               ))}
 
@@ -161,10 +161,7 @@ export function ThreatMap() {
                       opacity={isTarget ? 0.9 : 0.5}
                     />
                     {isTarget && (
-                      <circle r={4} fill="none" stroke="var(--destructive)" strokeWidth={0.8}>
-                        <animate attributeName="r" from="4" to="11" dur="1.4s" repeatCount="indefinite" />
-                        <animate attributeName="opacity" from="0.8" to="0" dur="1.4s" repeatCount="indefinite" />
-                      </circle>
+                      <circle r={7} fill="none" stroke="var(--destructive)" strokeWidth={0.8} opacity={0.4} />
                     )}
                   </Marker>
                 )
@@ -186,7 +183,7 @@ export function ThreatMap() {
             <PanelHeader title="Top Targeted" subtitle="By recent volume" />
             <div className="space-y-2 p-3">
               {ranked.map(([name, count], i) => (
-                <div key={name} className="flex items-center justify-between rounded-lg border border-border px-3 py-2 text-sm">
+                <div key={name} className="flex items-center justify-between rounded-2xl border border-border px-3 py-2 text-sm">
                   <span className="flex items-center gap-2">
                     <span className="font-mono text-xs text-muted-foreground">{i + 1}</span>
                     {name}
